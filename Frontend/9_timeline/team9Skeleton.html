@@ -1,4 +1,3 @@
-﻿
 <!DOCTYPE html>
 <html>
 
@@ -10,6 +9,156 @@
     <link rel="stylesheet" href="css/styles.css">
 
     <style>
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: initial;
+            align-items: stretch;
+            min-height: 100vh;
+}
+
+
+        /* HEADER */
+
+        .head {
+            background-color: rgb(30, 33, 51);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            ;
+        }
+
+        .head__logo {
+            margin-left: 20px;
+        }
+
+        .head__export {
+            color: #fff;
+            display: flex;
+            margin-right: 100px;
+            align-items: center;
+        }
+
+
+        .head__avatar {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .head__export p {
+            margin-left: 5px;
+            font-size: 20px;
+        }
+
+        .head__export i {}
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: rgb(203, 202, 202);
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .foot__back {
+            margin-right: 30px;
+            background-color: rgb(41, 152, 88);
+            color: white;
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: none;
+        }
+
+        .foot__next {
+            margin-left: 30px;
+            background-color: rgb(41, 152, 88);
+            color: white;
+            width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: none;
+        }
+
+        .foot__pagination {
+            font-size: 20px;
+            font-weight: 600;
+            color: black;
+        }
+
+
+        main {
+            flex-grow: 1;
+            overflow-y: scroll;
+        }
+
+        .main_container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        nav {
+            background-color: rgb(30, 33, 51);
+            width: 350px;
+        }
+
+
+        /* SECTIONS MENU */
+
+        .sections-menu {}
+
+        .sections-menu ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .sections-menu ul li {
+            padding: 15px;
+            position: relative;
+            width: 350px;
+            border-top: 1px solid black;
+            background-color: rgb(30, 33, 51);
+        }
+
+        .sections-menu ul li {
+            border-right: 5px solid rgb(61, 65, 90);
+        }
+
+        .sections-menu ul ul {
+            opacity: 0;
+            position: absolute;
+            visibility: hidden;
+            left: 100%;
+            top: -2%;
+            background-color: rgb(40, 44, 63);
+        }
+
+        .sections-menu ul ul li {
+            background-color: rgb(79, 84, 115);
+            width: 250px;
+        }
+
+        .sections-menu ul li:hover ul {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .sections-menu ul li a {
+            color: white;
+        }
         /* BASIC ELEMENTS */
         .basic_button {
             background-color: rgb(24, 146, 105);
@@ -30,9 +179,9 @@
         </div>
         <div class="head__export">
             <i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i>
-            <p>Export</p>
+            <p>ΕΞΑΓΩΓΗ</p>
         </div>
-        <img class="head__avatar" src="elvis.jpg" alt="Avatar">
+        <img class="head__avatar" src="man.jpg" alt="Avatar">
     </header>
 
 
@@ -150,51 +299,7 @@
         </nav>
 
         <main>
-           
-
-<block id="userArea">
-<title>Νεκρο Σημειο</title>
-<link href="Untitled-2.css" rel="stylesheet" type="text/css">
-<header></header>
-	
-<div>
-	<h5 id="a"> Διαλέξτε προιόν</h5> 
-	<select id="product" class="userInput">  <option  disabled selected>ΟΝΟΜΑ ΠΡΟΙΟΝΤΟΣ</option></select>
-	</div>
-	
-<div><h5 id="b"> Ποιό είναι το κόστος?</h5>
-	<input class="userInput"    type="text" name="productCost" placeholder="ΚΟΣΤΟΣ ΠΑΡΑΓΩΓΗΣ"><br>
-	</div>	
-		
-<div><h5  id="c"> Ποιά είναι η τιμή πώλησης?</h5>
-	<input class="userInput" id="inputC"  type="text" name="salesPrice" placeholder="ΤΙΜΗ ΠΩΛΗΣΗΣ"><br>
-	</div> 
-	
-<div><h5 id="d"> Ποιό είναι το ετήσιο κόστος?</h5>
-<input class="userInput"    type="text" name="yearlyIncome" placeholder="ΕΤΗΣΙΟ ΣΤΑΘΕΡΟ ΚΟΣΤΟΣ"><br> 
-	</div> 
-	
-<div><h5 id="e"> Ποιός είναι ο αριθμός πωλήσεων?</h5>
-<input class="userInput" id="inputE"  type="text" name="salesCount" placeholder="ΑΡΙΘΜΟΣ ΠΩΛΗΣΕΩΝ"><br>
-	</div> 
-	
-	
-	<div>
-	<button id="calculate"> ΥΠΟΛΟΓΙΣΕ</button>
-	<input id="result"  placeholder="ΝΕΚΡΟ ΣΗΜΕΙΟ ΠΡΟΙΟΝΤΩΣ" disabled>
-	</div>
-	
-	<button id="instructions"> ΟΔΗΓΙΕΣ</button>
-	<div id="instructions">Σε αυτή την ενότητα υπολογίζεται το Νεκρό Σημείο των προιόντων.Δηλαδή, το σημείο στο οποίο το ύψος των πωλήσεων έχει συνολικά έσοδα ίσα με τα συνολικά έξοδα.
-		Συμπληρώστε τα απαραίτητα πεδία και πατήστε το πλήκτρο για τον υπολογισμό του Νεκρού Σημείου. Στη συνέχεια επιλέξτε το πλήκτρο "ΕΜΠΡΟΣ" για να προχωρήσετε παρακάτω.
-	      </div>
-	
-<input id="add" type="image" src="add.png" alt="add" />
-		
-</block>
-
-
-
+            <!-- Team 9 Code Here -->
         </main>
     </div>
 
@@ -202,7 +307,7 @@
     <footer class="foot">
         <button class="foot__back">ΠΙΣΩ</button>
         <span class="foot__pagination">
-            <p>1/2</p>
+            <p>1/1</p>
         </span>
         <button class="foot__next">ΜΠΡΟΣΤΑ</button>
     </footer>
